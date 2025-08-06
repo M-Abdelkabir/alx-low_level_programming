@@ -1,8 +1,8 @@
-	.file	"main.c"
+	.file	"0-main.c"
 	.text
 	.section	.rodata
 .LC0:
-	.string	"hello world"
+	.string	"Holberton School"
 	.text
 	.globl	main
 	.type	main, @function
@@ -18,7 +18,7 @@ main:
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT
-	nop
+	movl	$0, %eax
 	popq	%rbp
 	.cfi_def_cfa 7, 8
 	ret
