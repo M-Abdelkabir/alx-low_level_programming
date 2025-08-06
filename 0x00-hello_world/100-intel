@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CFILE -o "${CFILE%.c}.s"
+gcc -S -masm=intel -fno-asynchronous-unwind-tables -fno-pie -fno-stack-protector $CFILE -o "${CFILE%.c}.s"
