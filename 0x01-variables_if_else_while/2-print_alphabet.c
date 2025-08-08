@@ -6,8 +6,8 @@
 
 int main(void)
 {
-	char text[] = "abcdefghijklmnopqrstuvwxyz\n\0";
-	int n = sizeof(text);
+	char text[] = "abcdefghijklmnopqrstuvwxyz\n";
+	int n = sizeof(text) - 1;
 
 	register int i = 0;
 
