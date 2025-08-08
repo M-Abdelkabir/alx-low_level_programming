@@ -14,7 +14,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	/*printf("n = %d , sign de n  = %d\n", n, n >> 31);*/
 	printf("Last digit of %d is", n);
-	n = (n % 10) ;
+	n = (n % 10);
 	printf(" %d and is ", n);
 	if (n == 0)
 		printf("0\n");
