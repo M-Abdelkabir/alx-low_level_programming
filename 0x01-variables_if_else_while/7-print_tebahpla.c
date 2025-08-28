@@ -1,0 +1,17 @@
+#include <stdio.h>
+/**
+ * main - Alphabet with just two putchar
+ * Return: Always 0 hhhh
+ */
+
+int main(void)
+{
+	char text[] = "\nabcdfghijklmnoprstuvwxyz";
+
+	register int i = sizeof(text) - 1;
+
+	for (; i >= 0; i--)
+		putchar(text[i]);
+	return (0);
+}
+
