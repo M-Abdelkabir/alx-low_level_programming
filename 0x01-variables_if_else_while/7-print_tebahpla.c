@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	char text[] = "\nabcdfghijklmnoprstuvwxyz";
+	char text[] = "\nabcdefghijklmnopqrstuvwxyz";
 
 	register int i = sizeof(text) - 1;
 
