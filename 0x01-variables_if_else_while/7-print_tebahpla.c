@@ -8,9 +8,9 @@ int main(void)
 {
 	char text[] = "\nabcdefghijklmnopqrstuvwxyz";
 
-	register int i = sizeof(text) - 1;
+	register int i = sizeof(text) - 2;
 
-	for (; i > 0; i--)
+	for (; i >= 0; i--)
 		putchar(text[i]);
 	return (0);
 }
