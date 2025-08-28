@@ -10,7 +10,7 @@ int main(void)
 
 	register int i = sizeof(text) - 1;
 
-	for (; i >= 0; i--)
+	for (; i > 0; i--)
 		putchar(text[i]);
 	return (0);
 }
