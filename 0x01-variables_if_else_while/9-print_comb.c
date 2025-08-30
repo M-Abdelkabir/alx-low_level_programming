@@ -8,7 +8,8 @@ int main(void)
 {
 	register int i = 0;
 
-	for (; i <= 9; i++){
+	for (; i <= 9; i++)
+	{
 		putchar('0' + i);
 		if (i == 9)
 			break;
