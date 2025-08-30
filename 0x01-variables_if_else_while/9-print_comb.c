@@ -6,13 +6,16 @@
 
 int main(void)
 {
-	char text[] = "0, 1, 2, 3, 4, 5, 6, 7, 8, 9\n";
-	int n = sizeof(text) - 1;
-
 	register int i = 0;
 
-	for (; i < n; i++)
-		putchar(text[i]);
+	for (; i <= 9; i++){
+		putchar('0' + i);
+		if (i == 9)
+			break;
+		putchar(',');
+		putchar(' ');
+	}
+	putchar('\n');
 	return (0);
 }
 
