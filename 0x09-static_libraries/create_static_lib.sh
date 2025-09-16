@@ -1,4 +1,14 @@
 #!/bin/bash
 
-gcc -c *.c
-ar rc liball.a *.o
+# Compile all .c files to object files
+gcc -Wall -Werror -Wextra -pedantic -c *.c
+
+# Create the static library
+ar -rc liball.a *.o
+
+# Index the library
+ranlib libmy.a
+
+# Verify the contents
+ar -t libmy.a
+nm libmy.a
