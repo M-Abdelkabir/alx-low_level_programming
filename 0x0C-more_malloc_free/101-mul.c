@@ -13,9 +13,10 @@
 int _strlen(char *s)
 {
 	int len = 0;
+
 	while (s[len])
 		len++;
-	return len;
+	return (len);
 }
 /**
  * print_error - Prints "Error" and exits with status 98
@@ -24,6 +25,7 @@ void print_error(void)
 {
 	char *error = "Error\n";
 	int i = 0;
+
 	while (error[i])
 		_putchar(error[i++]);
 	exit(98);
@@ -38,6 +40,7 @@ void print_error(void)
 int is_valid_number(char *s)
 {
 	int i = 0;
+
 	while (s[i])
 	{
 		if (s[i] < '0' && s[i] > '9')
@@ -59,11 +62,11 @@ void multiply(char *num1, char *num2)
 	int len_result = len1 + len2;
 	int i, j, carry, product;
 	int *result;
-	
+
 	result = calloc(len_result, sizeof(int));
 	if (result == NULL)
 		print_error();
-	
+
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
@@ -98,11 +101,11 @@ int main(int argc, char *argv[])
 {
 	if (argc != 3)
 		print_error();
-	
+
 	if (!is_valid_number(argv[1]) || !is_valid_number(argv[2]))
 		print_error();
-	
+
 	multiply(argv[1], argv[2]);
-	
+
 	return (0);
 }
