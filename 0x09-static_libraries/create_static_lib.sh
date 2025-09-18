@@ -4,7 +4,7 @@
 gcc -Wall -Werror -Wextra -pedantic -c *.c
 
 # Create the static library
-ar -rc liball.a *.o
+ar -rc libmy.a *.o
 
 # Index the library
 ranlib libmy.a
