@@ -1,18 +1,10 @@
-#include "main.h"
+#include <unistd.h>
 /**
-*main - ñojviorhi
-*
-*Return: kughrukh
-*/
-int main(void)
+ * _putchar - just put a caracter
+ * @c : one caracter
+ * Return : code success or fail
+ */
+int _putchar(char c)
 {
-	char put[8] = "_putchar";
-	int i;
-
-	for (i = 0; i < 8; i++)
-	{
-		_putchar(put[i]);
-	}
-	_putchar('\n');
-	return (0);
+    return write(1, &c, 1);
 }
