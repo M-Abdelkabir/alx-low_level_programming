@@ -17,18 +17,6 @@ int _strlen(char *s)
 		len++;
 	return len;
 }
-
-/**
- * _putchar - Writes a character to stdout
- * @c: The character to write
- *
- * Return: On success 1
- */
-int _putchar(char c)
-{
-	return write(1, &c, 1);
-}
-
 /**
  * print_error - Prints "Error" and exits with status 98
  */
