@@ -1,42 +1,44 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
-  *_memset - mnbni
-  *
-  *@s: mkhm
-  *@b: ,kmhm
-  *@n: mojmihj6
-  *Return: okmihjj
-  */
-
+ * _memset - Fills memory with a constant byte
+ * @s: Pointer to the memory area
+ * @b: The constant byte to fill with
+ * @n: Number of bytes to fill
+ *
+ * Return: Pointer to the memory area s
+ */
 char *_memset(char *s, char b, unsigned int n)
 {
-	char *ptr = s;
+    unsigned int i;
 
-	while (n--)
-		*s++ = b;
-	return (ptr);
+    for (i = 0; i < n; i++)
+        s[i] = b;
+
+    return (s);
 }
 /**
- * _calloc - prints buffer in hexa
- * @nmemb: the address of memory to print
- * @size: the size of the memory to print
+ * _calloc - Allocates memory for an array and initializes it to zero
+ * @nmemb: Number of elements
+ * @size: Size of each element
  *
- * Return: Nothing.
+ * Return: Pointer to allocated memory, or NULL on failure
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *m;
+    void *ptr;
+    unsigned int total_size;
 
-	if (size == 0 || nmemb == 0)
-		return (NULL);
-	m = malloc(sizeof(int) * nmemb);
-	if (m == NULL)
-		return (NULL);
-	free(m);
-	_memset(m, 0, sizeof(int) * nmemb);
-	return (m);
+    if (nmemb == 0 || size == 0)
+        return (NULL);
+
+    total_size = nmemb * size;
+    ptr = malloc(total_size);
+    if (ptr == NULL)
+        return (NULL);
+
+    _memset(ptr, 0, total_size);
+
+    return (ptr);
 }
