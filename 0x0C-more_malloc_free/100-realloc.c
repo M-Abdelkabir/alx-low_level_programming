@@ -10,12 +10,11 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-    unsigned int i;
+	unsigned int i;
 
-    for (i = 0; i < n; i++)
-        dest[i] = src[i];
-
-    return (dest);
+	for (i = 0; i < n; i++)
+		dest[i] = src[i];
+	return (dest);
 }
 /**
  * _realloc - Reallocates a memory block using malloc and free
@@ -27,35 +26,33 @@ char *_memcpy(char *dest, char *src, unsigned int n)
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-    void *new_ptr;
-    unsigned int min_size;
-    char *char_old, *char_new;
+	void *new_ptr;
+	unsigned int min_size;
+	char *char_old, *char_new;
 
-    if (ptr == NULL)
-        return (malloc(new_size));
+	if (ptr == NULL)
+		return (malloc(new_size));
 
-    if (new_size == 0)
-    {
-        free(ptr);
-        return (NULL);
-    }
+	if (new_size == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
 
-    if (new_size == old_size)
-        return (ptr);
+	if (new_size == old_size)
+		return (ptr);
 
-    new_ptr = malloc(new_size);
-    if (new_ptr == NULL)
-        return (NULL);
+	new_ptr = malloc(new_size);
+	if (new_ptr == NULL)
+		return (NULL);
 
-    min_size = (old_size < new_size) ? old_size : new_size;
-    if (min_size > 0)
-    {
-        char_old = (char *)ptr;
-        char_new = (char *)new_ptr;
-        _memcpy(char_new, char_old, min_size);
-    }
-
-    free(ptr);
-
-    return (new_ptr);
+	min_size = (old_size < new_size) ? old_size : new_size;
+	if (min_size > 0)
+	{
+		char_old = (char *)ptr;
+		char_new = (char *)new_ptr;
+		_memcpy(char_new, char_old, min_size);
+	}
+	free(ptr);
+	return (new_ptr);
 }
