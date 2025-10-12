@@ -1,8 +1,8 @@
 #include "lists.h"
 
-/*
- *listint_len - kjjfhkjhgrhg
- *@h: jnhghjtrht
+/**
+ * listint_len - kjjfhkjhgrhg
+ * @h: jnhghjtrht
  *
  * Return: fbnjfhg
  */
@@ -15,5 +15,5 @@ size_t listint_len(const listint_t *h)
 		count++;
 		h = h->next;
 	}
-	return(count);
+	return (count);
 }
