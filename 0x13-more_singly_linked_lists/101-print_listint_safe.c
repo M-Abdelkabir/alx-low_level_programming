@@ -15,17 +15,13 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 		return (0);
-	while (tow != NULL && tow->next != NULL)
+	while (tow != NULL && tow->next != NULL && found == 0)
 	{
 		one = one->next;
 		tow = tow->next->next;
 		if (tow == one)
-		{
 			found = 1;
-			break;
-		}
 	}
-	
 	if (found)
 	{
 		one = head;
@@ -37,21 +33,18 @@ size_t print_listint_safe(const listint_t *head)
 		loop_start = tow;
 	}
 	found = 0;
-	one = head;
-	while (one)
+	while (head)
 	{
-		printf("[%p] %d\n", (void *)one, one->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		count++;
-		if (one == loop_start)
+		if (head == loop_start)
 			found = 1;
-		if (found && one->next == loop_start)
+		if (found && head->next == loop_start)
 		{
-			printf("-> [%p] %d\n",(void *)loop_start, loop_start->n);
+			printf("-> [%p] %d\n", (void *)loop_start, loop_start->n);
 			break;
 		}
-		one = one->next;
+		head = head->next;
 	}
-
-
 	return (count);
 }
