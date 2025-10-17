@@ -39,11 +39,6 @@ size_t free_listint_safe(listint_t **h)
 		count++;
 		if (tow == loop_start && loop_start != NULL)
 		{
-			if (one == loop_start)
-			{
-				free(one);
-				count++;
-			}
 			break;
 		}
 		tow = one;
