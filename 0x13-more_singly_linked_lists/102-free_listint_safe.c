@@ -9,30 +9,28 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t count = 0;
-	int found = 0;
 	listint_t *one, *tow, *loop_start = NULL;
 
 	if (h == NULL || *h == NULL)
 		return (0);
 	one = tow = *h;
-	while (tow != NULL && tow->next != NULL && found == 0)
+	while (tow != NULL && tow->next != NULL)
 	{
 		one = one->next;
 		tow = tow->next->next;
 		if (tow == one)
-			found = 1;
-	}
-	if (found)
-	{
-		one = *h;
-		while (tow != one)
 		{
-			one = one->next;
-			tow = tow->next;
+			one = *h;
+			while (tow != one)
+			{
+				one = one->next;
+				tow = tow->next;
+			}
+			loop_start = tow;
+			break;
 		}
-		loop_start = tow;
+
 	}
-	found = 0;
 	tow = *h;
 	while (tow)
 	{
